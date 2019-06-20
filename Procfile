@@ -1,1 +1,1 @@
-worker: sh target/bin/workerBot
+web: java -jar build/libs/Suldina-1.0-SNAPSHOT.jar
