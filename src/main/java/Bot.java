@@ -8,7 +8,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 
-
+import java.util.Properties;
 import java.util.logging.Level;
 
 import static org.telegram.telegrambots.meta.logging.BotLogger.log;
@@ -33,8 +33,9 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        Message message = update.getMessage();
-                if (message !=null)
+//        Message message = update.getMessage();
+        String message = update.getMessage().toString();
+//                if (message !=null)
         sendMsg(update.getMessage().getChatId().toString(), message);
     }
 
@@ -46,13 +47,14 @@ public class Bot extends TelegramLongPollingBot {
     public void sendMsg(String chatId, String s) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
-        sendMessage.setChatId(message.getChatId().toString());
-        sendMessage.setReplyToMessageId();
+//        sendMessage.setChatId(message.getChatId().toString());
+        sendMessage.setChatId(chatId);
+//        sendMessage.setReplyToMessageId();
         sendMessage.setText(s);
         Buttons buttons =new Buttons();
         buttons.setButtons(sendMessage);
         try {
-            sendMessage(sendMessage);
+            execute(sendMessage);
         } catch (TelegramApiException e) {
             log(Level.SEVERE, "Exception: ", e.toString());
         }
@@ -73,6 +75,8 @@ public class Bot extends TelegramLongPollingBot {
      */
     @Override
     public String getBotToken() {
-        return "";
+        return
+        "769408249:AAF8qMtFx2ylOHGPNaynrAK6Z1fZXGitY20";
+
     }
 }
