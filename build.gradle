@@ -5,6 +5,7 @@ plugins {
 
 group 'Suldina'
 version '1.0-SNAPSHOT'
+description = "bot"
 
 sourceCompatibility = 1.8
 
