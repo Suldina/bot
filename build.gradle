@@ -31,7 +31,8 @@ jar {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
-task stage(dependsOn: ['build', 'clean'])
+//task stage(dependsOn: ['build', 'clean'])
+task stage(dependsOn: ['installDist'])
 build.mustRunAfter clean
 
 
