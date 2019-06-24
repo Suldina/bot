@@ -1,1 +1,1 @@
-web: ./build/install/Suldina/bin/Suldina
+bot: java -jar build/libs/Suldina-1.0-SNAPSHOT.jar

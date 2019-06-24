@@ -33,10 +33,16 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-//        Message message = update.getMessage();
-        String message = update.getMessage().toString();
-//                if (message !=null)
-        sendMsg(update.getMessage().getChatId().toString(), message);
+        Message message = update.getMessage();
+//        String message = update.getMessage().toString();
+            if    (message !=null && message.hasText()) {
+
+                if (message.getText().equals("/help")) {
+                    sendMsg(update.getMessage().getChatId().toString(), "Ленка");
+
+                }
+            }
+
     }
 
     /**
@@ -45,6 +51,7 @@ public class Bot extends TelegramLongPollingBot {
      * @param s Строка, которую необходимот отправить в качестве сообщения.
      */
     public void sendMsg(String chatId, String s) {
+        int questionnumber;
         SendMessage sendMessage = new SendMessage();
         sendMessage.enableMarkdown(true);
 //        sendMessage.setChatId(message.getChatId().toString());
@@ -75,8 +82,8 @@ public class Bot extends TelegramLongPollingBot {
      */
     @Override
     public String getBotToken() {
-        return
-        "69408249:AAF8qMtFx2ylOHGPNaynrAK6Z1fZXGitY20\n";
+        return System.getenv ("token")
+        ;
 
     }
 }
