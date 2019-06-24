@@ -24,7 +24,7 @@ dependencies {
 }
 jar {
     manifest {
-        attributes "Bot": "com.baeldung.fatjar.Application"
+        attributes "Main-Class": "Bot"
     }
 
     from {
