@@ -40,7 +40,7 @@ shadowJar {
 //}
 //task stage(dependsOn: ['build', 'clean'])
 
-task stage(dependsOn: ['installDist'])
-build.mustRunAfter clean
+//task stage(dependsOn: ['installDist'])
+//build.mustRunAfter clean
 
 
