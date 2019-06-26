@@ -31,10 +31,10 @@ public class Buttons {
 
 
         KeyboardRow keyboardThirdRow = new KeyboardRow();
-        keyboardSecondRow.add(new KeyboardButton("Сфера услуг"));
+        keyboardThirdRow.add(new KeyboardButton("Сфера услуг"));
 
         KeyboardRow keyboardАForthRow = new KeyboardRow();
-        keyboardSecondRow.add(new KeyboardButton("Иное"));
+        keyboardАForthRow.add(new KeyboardButton("Иное"));
 
         // Добавляем все строчки клавиатуры в список
         keyboard.add(keyboardFirstRow);
