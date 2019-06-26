@@ -37,14 +37,13 @@ public class Bot extends TelegramLongPollingBot {
 //        String message = update.getMessage().toString();
             if    (message !=null && message.hasText()) {
 
-                if (message.getText().equals("/help")) {
-                    sendMsg(update.getMessage().getChatId().toString(), "Ленка");
+                if (message.getText().equals("/start")) {
+                    sendMsg(update.getMessage().getChatId().toString(), "Выберите основную сферу деятельности:");
 
                 }
             }
 
     }
-
     /**
      * Метод для настройки сообщения и его отправки.
      * @param chatId id чата

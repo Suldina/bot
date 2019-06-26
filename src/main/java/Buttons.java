@@ -22,12 +22,19 @@ public class Buttons {
         // Первая строчка клавиатуры
         KeyboardRow keyboardFirstRow = new KeyboardRow();
         // Добавляем кнопки в первую строчку клавиатуры
-        keyboardFirstRow.add(new KeyboardButton("Привет"));
+        keyboardFirstRow.add(new KeyboardButton("Производство"));
 
         // Вторая строчка клавиатуры
         KeyboardRow keyboardSecondRow = new KeyboardRow();
         // Добавляем кнопки во вторую строчку клавиатуры
-        keyboardSecondRow.add(new KeyboardButton("Помощь"));
+        keyboardSecondRow.add(new KeyboardButton("Торговля"));
+
+
+        KeyboardRow keyboardThirdRow = new KeyboardRow();
+        keyboardSecondRow.add(new KeyboardButton("Сфера услуг"));
+
+        KeyboardRow keyboardАForthRow = new KeyboardRow();
+        keyboardSecondRow.add(new KeyboardButton("Иное"));
 
         // Добавляем все строчки клавиатуры в список
         keyboard.add(keyboardFirstRow);
