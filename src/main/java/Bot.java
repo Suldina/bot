@@ -34,17 +34,22 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
+        Buttons buttons=new Buttons();
+        SendMessage sendMessage = new SendMessage();
 //        String message = update.getMessage().toString();
             if    (message !=null && message.hasText()) {
 
                 if (message.getText().equals("/start")) {
-                    sendMsg(update.getMessage().getChatId().toString(), "Выберите основную сферу деятельности:");
-
+//                    sendMsg(update.getMessage().getChatId().toString(), "Выберите основную сферу деятельности:");
+                    sendMessage.setChatId(message.getChatId())
+                            .setText("Выберите основную сферу деятельности:").setReplyMarkup(buttons.setButtons());
                 }
 
             else if (update.hasCallbackQuery()) {
-                    sendMsg(update.getMessage().getChatId().toString(),
-                            "Относится ли ваша деятельность к производству алкоголя?");
+//                    sendMsg(update.getMessage().getChatId().toString(),
+//                            "Относится ли ваша деятельность к производству алкоголя?");
+                    sendMessage.setChatId(message.getChatId())
+                            .setText("производство алкоголя?").setReplyMarkup(buttons.setButtons());
 
             }
             }
@@ -65,7 +70,7 @@ public class Bot extends TelegramLongPollingBot {
         //sendMessage.setReplyToMessageId();
         sendMessage.setText(s);
         Buttons buttons =new Buttons();
-        buttons.setButtons(sendMessage);
+       // buttons.setButtons(sendMessage);
         try {
             execute(sendMessage);
         } catch (TelegramApiException e) {
