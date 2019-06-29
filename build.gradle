@@ -14,13 +14,9 @@ mainClassName = "Bot"
 
 repositories {
     mavenCentral()
-//    maven { url 'http://dl.bintray.com/vermeulen-mp/gradle-plugins' }
 }
-//apply plugin: 'heroku'
-
 dependencies {
     compile group: 'org.telegram', name: 'telegrambots', version: '4.1.2'
-//    testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'com.annimon:tgbots-module:0.1'
 }
@@ -29,22 +25,5 @@ shadowJar {
     exclude 'META-INF/*.DSA'
     exclude 'META-INF/*.RSA'
 }
-//jar {
-//    manifest {
-//        attributes "Main-Class": "Bot"
-//    }
-//
-//    from {
-//        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-//    }
-//}
-//task stage(dependsOn: ['build', 'clean'])
-        //{build.mustRunAfter clean}
 
-//task copyToLib(type: Copy) {
-//    into "$buildDir/libs"
-//    from(configurations.compile)
-//}
-//
-//stage.dependsOn(copyToLib)
 

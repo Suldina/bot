@@ -41,7 +41,14 @@ public class Bot extends TelegramLongPollingBot {
                     sendMsg(update.getMessage().getChatId().toString(), "Выберите основную сферу деятельности:");
 
                 }
+
+            else if (update.hasCallbackQuery()) {
+                    sendMsg(update.getMessage().getChatId().toString(),
+                            "Относится ли ваша деятельность к производству алкоголя?");
+
             }
+            }
+
 
     }
     /**
@@ -55,7 +62,7 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.enableMarkdown(true);
 //        sendMessage.setChatId(message.getChatId().toString());
         sendMessage.setChatId(chatId);
-//        sendMessage.setReplyToMessageId();
+        //sendMessage.setReplyToMessageId();
         sendMessage.setText(s);
         Buttons buttons =new Buttons();
         buttons.setButtons(sendMessage);
